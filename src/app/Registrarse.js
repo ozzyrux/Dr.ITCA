@@ -1,6 +1,7 @@
 import { createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/12.4.0/firebase-auth.js";
 import {auth} from "./firebase.js"
 import { NotificacionAuth } from "./Notificacion.js";
+import { getFirestore, doc, setDoc } from "https://www.gstatic.com/firebasejs/12.4.0/firebase-firestore.js";
 
 // Esperar a que el DOM esté completamente cargado
 document.addEventListener('DOMContentLoaded', () => {
@@ -24,16 +25,28 @@ document.addEventListener('DOMContentLoaded', () => {
                 const userCredencial = await createUserWithEmailAndPassword(auth, email, password);
                 console.log(userCredencial);
 
+                // Guardar documento de usuario en Firestore con rol por defecto
+                try {
+                    const db = getFirestore();
+                    const userDocRef = doc(db, "usuarios", userCredencial.user.uid);
+                    const rol = "usuario";
+                    await setDoc(userDocRef, { email, rol });
+                } catch (err) {
+                    console.warn("No se pudo crear el documento de usuario en Firestore:", err);
+                }
+
                 //Cerrando el modal despues de registrarme
                 const signupModal = document.querySelector("#registrarModal");
-                const modal = bootstrap.Modal.getInstance(signupModal) || new bootstrap.Modal(signupModal);
-                modal.hide();
+                if (signupModal && window.bootstrap && bootstrap.Modal) {
+                    const modal = bootstrap.Modal.getInstance(signupModal) || new bootstrap.Modal(signupModal);
+                    if (modal && typeof modal.hide === 'function') modal.hide();
+                }
 
                 NotificacionAuth("Bienvenido " + userCredencial.user.email);
                 // Redirigir a inicio.html después del registro exitoso
                 setTimeout(() => {
                     window.location.href = "../pages/inicio.html";
-                }, 3000);
+                }, 1500);
             } catch(error) {
                 //Mostrando notificacion de errores
                 if(error.code === "auth/email-already-in-use") {

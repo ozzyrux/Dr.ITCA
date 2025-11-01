@@ -11,16 +11,17 @@ document.addEventListener('DOMContentLoaded', () => {
     //Verficandod que el boton este cargado
     if (salirSesion) {
         //Saliendo de la sesion
-        salirSesion.addEventListener("click", async () => {
+        salirSesion.addEventListener("click", async (e) => {
+            e.preventDefault();
             await signOut(auth);
             console.log("Usuario Saliendo");
 
             //Notificando
-            NotificacionAuth("Saliendo del sistema")
+            NotificacionAuth("Saliendo del sistema");
             
             setTimeout(() => {
                 //Redirigiendo al index
-                window.location.href = "/src/index.html";
+                window.location.href = "../../src/index.html";
             }, 3000);
         });
     } else {

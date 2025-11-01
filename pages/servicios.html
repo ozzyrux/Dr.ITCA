@@ -1,62 +1,26 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Servicios - Dr. ITCA</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="../CSS/styles.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
 </head>
+
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
-        <div class="container">
-            <a class="navbar-brand" href="inicio.html">
-                <img src="../img/logoITCA.png" alt="ITCA" height="40" class="d-inline-block align-text-top me-2">
-                Dr. ITCA
-            </a>
-            
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav me-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="inicio.html">
-                            <i class="bi bi-house-door me-1"></i>Inicio
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="citas.html">
-                            <i class="bi bi-calendar-check me-1"></i>Mis Citas
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="servicios.html">
-                            <i class="bi bi-heart-pulse me-1"></i>Servicios
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="perfil.html">
-                            <i class="bi bi-person me-1"></i>Mi Perfil
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="admin.html">
-                            <i class="bi bi-gear me-1"></i>Administración
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+    <app-navbar></app-navbar>
+
 
     <div class="container my-5">
         <div class="row">
             <div class="col-12">
                 <h1 class="text-center mb-4"><i class="bi bi-heart-pulse me-3"></i>Servicios Médicos Disponibles</h1>
-                <p class="lead text-center mb-5">Conoce todos los servicios que ofrece tu seguro estudiantil de ITCA-FEPADE</p>
+                <p class="lead text-center mb-5">Conoce todos los servicios que ofrece tu seguro estudiantil de
+                    ITCA-FEPADE</p>
             </div>
         </div>
 
@@ -69,7 +33,8 @@
                             <i class="bi bi-heart display-6"></i>
                         </div>
                         <h4 class="card-title">Consulta General</h4>
-                        <p class="card-text">Atención médica general: <br> Evaluación de síntomas, diagnóstico y tratamiento de enfermedades comunes.</p>
+                        <p class="card-text">Atención médica general: <br> Evaluación de síntomas, diagnóstico y
+                            tratamiento de enfermedades comunes.</p>
                         <div class="service-info">
                             <p class="text-muted"><i class="bi bi-clock me-2"></i>Duración: 30 minutos</p>
                             <p class="text-muted"><i class="bi bi-geo-alt me-2"></i>Consultorio 1</p>
@@ -86,7 +51,8 @@
                             <i class="bi bi-plus-circle display-6"></i>
                         </div>
                         <h4 class="card-title">Odontología</h4>
-                        <p class="card-text">Servicios dentales: <br> Limpiezas, tratamientos preventivos y atención de emergencias dentales.</p>
+                        <p class="card-text">Servicios dentales: <br> Limpiezas, tratamientos preventivos y atención de
+                            emergencias dentales.</p>
                         <div class="service-info">
                             <p class="text-muted"><i class="bi bi-clock me-2"></i>Duración: 45 minutos</p>
                             <p class="text-muted"><i class="bi bi-geo-alt me-2"></i>Consultorio Dental</p>
@@ -96,12 +62,12 @@
                 </div>
             </div>
 
-           
+
         </div>
 
         <!-- Más Servicios -->
         <div class="row g-4">
-            
+
 
             <div class="col-md-6">
                 <div class="card service-card lightblue h-100">
@@ -132,7 +98,7 @@
                             <p class="text-muted"><i class="bi bi-clock me-2"></i>Inmediata</p>
                             <p class="text-muted"><i class="bi bi-geo-alt me-2"></i>Sala de Emergencias</p>
                         </div>
-                        
+
                     </div>
                 </div>
             </div>
@@ -143,14 +109,17 @@
             <div class="col-12">
                 <div class="card bg-light">
                     <div class="card-body">
-                        <h3 class="card-title text-center mb-4"><i class="bi bi-info-circle me-2"></i>Información del Seguro</h3>
+                        <h3 class="card-title text-center mb-4"><i class="bi bi-info-circle me-2"></i>Información del
+                            Seguro</h3>
                         <div class="row">
                             <div class="col-md-6">
                                 <h5>Cobertura Incluida:</h5>
                                 <ul class="list-unstyled">
                                     <li><i class="bi bi-check-circle text-success me-2"></i> Consultas ilimitadas</li>
-                                    <li><i class="bi bi-check-circle text-success me-2"></i> Exámenes de laboratorio básicos</li>
-                                    <li><i class="bi bi-check-circle text-success me-2"></i> Atención de emergencias</li>
+                                    <li><i class="bi bi-check-circle text-success me-2"></i> Exámenes de laboratorio
+                                        básicos</li>
+                                    <li><i class="bi bi-check-circle text-success me-2"></i> Atención de emergencias
+                                    </li>
                                     <li><i class="bi bi-check-circle text-success me-2"></i> Medicamentos básicos</li>
                                 </ul>
                             </div>
@@ -182,7 +151,10 @@
             </div>
         </div>
     </footer>
-
+<!--Script de la navbar (role-aware) -->
+<script type="module" src="../src/componentes/navbar.js"></script>
+    <script type="module" src="../src/main.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>

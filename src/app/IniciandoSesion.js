@@ -24,10 +24,12 @@ if(InicioSesion){
 
       console.log(credenciales);
 
-      //Cerrando el modal despues de Iniciar Sesión
+      //Cerrando el modal despues de Iniciar Sesión (sólo si existe y bootstrap está cargado)
       const signupModal = document.querySelector("#InicioSesionModal");
-      const modal = bootstrap.Modal.getInstance(signupModal) ||new bootstrap.Modal(signupModal);
-      modal.hide();
+      if (signupModal && window.bootstrap && bootstrap.Modal) {
+        const modal = bootstrap.Modal.getInstance(signupModal) || new bootstrap.Modal(signupModal);
+        if (modal && typeof modal.hide === 'function') modal.hide();
+      }
 
       //Enviando notificacion de bienvenida
       NotificacionAuth("Bienvenido " + credenciales.user.email);
