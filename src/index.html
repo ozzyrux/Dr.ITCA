@@ -1,62 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content bg-dark="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dr.ITCA</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
     <link rel="stylesheet" href="./index.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
 </head>
+
 <body>
 
-<main class="contenedor-principal">
-    <div class="container-fluid">
+    <main class="contenedor-principal container-fluid">
+        <div class="row vh-100">
 
-        <div class="row g-0">
-
-            <div class="col-md-7 panel-izquierda">
-                <img src="../img/drItca.jpg" alt="Imagen de fondo de login" class="imagen-login">
+            <!-- Panel de imagen -->
+            <div class="col-12 col-md-6 panel-izquierda">
+                <img src="../img/drItca.jpg" alt="Imagen de fondo de login"
+                    class="imagen-login">
             </div>
 
-            <div class="col-12 col-md-5 panel-derecha">
-                <div class="logo-itca">
-                    <img src="../img/logoITCA.webp" alt="logoITCA">
+            <!-- Panel de formulario -->
+            <div class="col-12 col-md-6 d-flex flex-column align-items-center justify-content-center panel-derecha p-4">
+                <div class="text-center mb-4">
+                    <img src="../img/logoITCA.webp" alt="logoITCA" class="logo-itca mb-3" style="max-width: 120px;">
+                    <h1 class="titulo-app">Dr.ITCA</h1>
                 </div>
 
-                <div class="titulo-app">
-                    <h1>Dr.ITCA</h1>
-                </div>
-
-                <div class="contenido-login">
+                <div class="contenido-login text-center w-100" style="max-width: 400px;">
                     <h2>Iniciar Sesión</h2>
                     <p>Ingresa tus credenciales</p>
 
-                    <form id="sesion-form" class="w-100 px-4 d-flex flex-column align-items-center">
-                        <div class="mb-3 w-100">
+                    <form id="sesion-form" class="mt-4">
+                        <div class="mb-3">
                             <input type="email" id="InicioSesion-email" class="form-control"
                                 placeholder="Correo Electrónico" autocomplete="username" required>
                         </div>
-                        <div class="mb-4 w-100">
+                        <div class="mb-4">
                             <input type="password" id="InicioSesion-password" class="form-control"
                                 placeholder="Contraseña" autocomplete="current-password" required>
                         </div>
-                        <button class="btn btn-primary btn-lg w-75 mb-3 d-flex align-items-center justify-content-center" type="submit">
+                        <button
+                            class="btn btn-primary btn-lg w-100 mb-3 d-flex align-items-center justify-content-center"
+                            type="submit">
                             <i class="bi bi-envelope me-2"></i>Entrar con Email
                         </button>
-                        <button class="btn btn-lg w-75 mb-3 d-flex align-items-center justify-content-center" id="btnMicrosoft" type="button" style="background-color: #2F2F2F; color: white; border: none;">
+                        <button class="btn btn-lg w-100 mb-3 d-flex align-items-center justify-content-center"
+                            id="btnMicrosoft" type="button"
+                            style="background-color: #2F2F2F; color: white; border: none;">
                             <i class="bi bi-microsoft me-2"></i>Entrar con Microsoft
                         </button>
                     </form>
 
-                    <button class="btn btn-outline-secondary btn-lg w-75" data-bs-toggle="modal"
+                    <button class="btn btn-outline-secondary btn-lg w-100" data-bs-toggle="modal"
                         data-bs-target="#registrarModal">Registrarse</button>
                 </div>
             </div>
+
         </div>
-    </div>
-</main>
+    </main>
+
 
     <!--Apartado para el modal de registrarse-->
     <div class="modal fade" id="registrarModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -64,27 +69,31 @@
             <div class="modal-content bg-dark">
                 <div class="modal-header">
                     <h1 class="modal-title fs-5 text-light" id="exampleModalLabel">Registrarse</h1>
-                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <form id="Registrarse-form" >
-                    
+                    <form id="Registrarse-form">
+
                         <label class="text-light" for="email">Email:</label>
-                        <input type="email" id="Registrar-Email" class="form-control mb-3" placeholder="Email" required autocomplete="Email">
-                        <label class="text-light" for="password" >Password:</label>
-                        <input type="password" id="Registrar-Password" class="form-control mb-3" placeholder="*********" required autocomplete="current-password">
-                    
+                        <input type="email" id="Registrar-Email" class="form-control mb-3" placeholder="Email" required
+                            autocomplete="Email">
+                        <label class="text-light" for="password">Password:</label>
+                        <input type="password" id="Registrar-Password" class="form-control mb-3" placeholder="*********"
+                            required autocomplete="current-password">
+
                         <button class="btn btn-light" type="submit">Register</button>
                     </form>
                 </div>
             </div>
         </div>
     </div>
-<!---TOASTIFY-->
-<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
-<!---BOOTSTRAP-->
-<script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-<!--MAIN-->
-<script src="./main.js" type="module"></script>
+    <!---TOASTIFY-->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <!---BOOTSTRAP-->
+    <script src="../public/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <!--MAIN-->
+    <script src="./main.js" type="module"></script>
 </body>
+
 </html>

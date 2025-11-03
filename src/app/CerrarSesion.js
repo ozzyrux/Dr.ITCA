@@ -7,7 +7,7 @@ import { NotificacionAuth } from "./Notificacion.js";
 document.addEventListener('DOMContentLoaded', () => {
     //Guardando en constante el boton
     const salirSesion = document.querySelector("#salir");
-    
+
     //Verficandod que el boton este cargado
     if (salirSesion) {
         //Saliendo de la sesion
@@ -18,11 +18,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
             //Notificando
             NotificacionAuth("Saliendo del sistema");
-            
+            sessionStorage.removeItem("usuarioLogueado");
+
             setTimeout(() => {
                 //Redirigiendo al index
-                window.location.href = "../../src/index.html";
-            }, 3000);
+                window.location.href = "../src/index.html";
+            }, 1000);
         });
     } else {
         console.log("El botón de salir no se encontró en la página");

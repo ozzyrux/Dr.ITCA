@@ -22,7 +22,7 @@ if(InicioSesion){
       //Ejecutando la funcion y enviando credenciales
       const credenciales = await signInWithEmailAndPassword(auth,email,password);
 
-      console.log(credenciales);
+      console.log('LAS CREDENCIAAAALES: '+credenciales);
 
       //Cerrando el modal despues de Iniciar Sesión (sólo si existe y bootstrap está cargado)
       const signupModal = document.querySelector("#InicioSesionModal");
@@ -33,10 +33,13 @@ if(InicioSesion){
 
       //Enviando notificacion de bienvenida
       NotificacionAuth("Bienvenido " + credenciales.user.email);
+      console.log("Usuario IniciadOOOOOOOOOOOOOOOOOOOOO");
+
+      sessionStorage.setItem("usuarioLogueado", credenciales);
       // Redirigir a inicio.html después del registro exitoso
       setTimeout(() => {
         window.location.href = "../pages/inicio.html";
-      }, 3000);
+      }, 1000);
 
       //Capturando errores
     } catch (error) {

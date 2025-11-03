@@ -42,8 +42,7 @@ try {
 
           // imprimiendo los datos completos
           console.log("Datos del usuario:", Data);
-
-
+          sessionStorage.setItem("usuarioLogueado", JSON.stringify(Data));
         })
         .catch((error) => {
 

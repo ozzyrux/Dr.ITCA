@@ -1,54 +1,66 @@
 /* === VARIABLES DE COLOR === */
 :root {
     /* Colores principales */
-    --color-primary: #0d6efd;          /* Color principal (azul Bootstrap) */
-    --color-secondary: #6c757d;        /* Color secundario */
-    --color-success: #198754;          /* Color de éxito */
-    --color-danger: #dc3545;           /* Color de error */
-    
+    --color-primary: #0d6efd;
+    /* Color principal (azul Bootstrap) */
+    --color-secondary: #6c757d;
+    /* Color secundario */
+    --color-success: #198754;
+    /* Color de éxito */
+    --color-danger: #dc3545;
+    /* Color de error */
+
     /* Colores de marca Microsoft */
-    --color-microsoft-blue: #00A4EF;   /* Azul Microsoft */
-    --color-microsoft-bg: #2F2F2F;     /* Fondo botón Microsoft */
-    --color-microsoft-hover: #1a1a1a;  /* Hover botón Microsoft */
-    
+    --color-microsoft-blue: #00A4EF;
+    /* Azul Microsoft */
+    --color-microsoft-bg: #2F2F2F;
+    /* Fondo botón Microsoft */
+    --color-microsoft-hover: #1a1a1a;
+    /* Hover botón Microsoft */
+
     /* Colores de fondo */
-    --color-background: #ffffff;        /* Fondo principal */
-    --color-background-alt: #f0f0f0;   /* Fondo alternativo */
-    
+    --color-background: #ffffff;
+    /* Fondo principal */
+    --color-background-alt: #f0f0f0;
+    /* Fondo alternativo */
+
     /* Colores de texto */
-    --color-text: #212529;             /* Texto principal */
-    --color-text-light: #ffffff;       /* Texto claro */
-    
+    --color-text: #212529;
+    /* Texto principal */
+    --color-text-light: #ffffff;
+    /* Texto claro */
+
     /* Colores de sombras */
-    --shadow-color: rgba(0,0,0,0.2);   /* Color base para sombras */
-    --shadow-color-light: rgba(0,0,0,0.1); /* Color para sombras suaves */
+    --shadow-color: rgba(0, 0, 0, 0.2);
+    /* Color base para sombras */
+    --shadow-color-light: rgba(0, 0, 0, 0.1);
+    /* Color para sombras suaves */
 }
 
 /* === AJUSTES GENERALES: FIJAR PANTALLA Y ALTURA === */
 
 /* 1. Resetear márgenes y evitar scroll no deseado */
-body, html {
+body,
+html {
     height: 100%;
     margin: 0;
     padding: 0;
-    overflow-y: hidden; /* Evita el scroll vertical en desktop */
+    overflow-y: hidden;
+    /* Evita el scroll vertical en desktop */
     overflow-x: hidden;
 }
 
-/* 2. ¡CLAVE! Forzar la altura de los contenedores a la del viewport */
-.contenedor-principal, 
-.container-fluid, 
-.row.g-0 {
-    height: 100vh; /* Utiliza 100vh para que ocupen toda la altura de la pantalla */
-    /* display: flex; /* Opcional: Si el row no se estira bien, esto lo fuerza */
-    /* align-items: stretch; /* Opcional: Asegura que los hijos ocupen todo el alto */
+.contenedor-principal {
+    height: 100vh;
+    overflow: auto;
 }
 
 /* === PANEL IZQUIERDO (IMAGEN 60%) === */
 
 .panel-izquierda {
-    height: 100vh; /* ¡Asegura que este contenedor tenga la misma altura que la pantalla! */
-    padding: 0; 
+    height: auto;
+    /* ¡Asegura que este contenedor tenga la misma altura que la pantalla! */
+    padding: 0;
     margin: 0;
     /* Un color de fondo solo visible si la imagen no carga */
     background-color: var(--color-background-alt);
@@ -57,40 +69,47 @@ body, html {
 /* 3. ¡CLAVE! La imagen debe cubrir el 100% de su contenedor */
 .imagen-login {
     width: 100%;
-    height: 100%; /* ¡Esto es crucial! La imagen ocupa el 100% del alto de su padre */
-    object-fit: cover; /* Recorta la imagen para que cubra todo el espacio sin distorsionarse */
-    display: block; /* Elimina cualquier espacio adicional que el navegador pueda agregar a las imágenes */
+    height: 100%;
+    /* ¡Esto es crucial! La imagen ocupa el 100% del alto de su padre */
+    object-fit: cover;
+    /* Recorta la imagen para que cubra todo el espacio sin distorsionarse */
+    display: block;
+    /* Elimina cualquier espacio adicional que el navegador pueda agregar a las imágenes */
 }
 
 /* === PANEL DERECHO (FORMULARIO 40%) === */
 
 .panel-derecha {
-    height: 100vh; /* ¡Asegura que este panel también tenga la misma altura! */
+    height: 100vh;
+    /* ¡Asegura que este panel también tenga la misma altura! */
     background-color: var(--color-background);
-    
+
     display: flex;
     flex-direction: column;
-    justify-content: center; /* Centra el contenido verticalmente */
-    align-items: center; 
-    
-    padding: 20px; 
+    justify-content: center;
+    /* Centra el contenido verticalmente */
+    align-items: center;
+
+    padding: 20px;
 }
 
 /* Aumentar el tamaño del logo */
 .logo-itca img {
-    max-width: 200px; /* Tamaño del logo ajustado */
-    height: auto; 
+    max-width: 200px;
+    /* Tamaño del logo ajustado */
+    height: auto;
 }
 
 /* Estilos para el contenido del login */
 .contenido-login {
-    width: 90%; 
+    width: 90%;
     max-width: 400px;
     text-align: center;
 }
 
 /* Ajuste de márgenes de contenido */
-.logo-itca, .titulo-app {
+.logo-itca,
+.titulo-app {
     margin-bottom: 25px;
 }
 
@@ -124,40 +143,24 @@ body, html {
 /* === RESPONSIVIDAD MÓVIL (MÁXIMO 767.98px) === */
 
 @media (max-width: 767.98px) {
-    
+
     /* 1. Permitir que todo el cuerpo de la página tenga scroll en móvil */
     body {
-        overflow-y: auto; 
-    }
-    
-    /* 2. Resetear la altura fija 100vh para permitir el scroll de contenido */
-    .contenedor-principal,
-    .container-fluid, 
-    .row.g-0 {
-        height: auto;
-        min-height: 100vh; /* Asegura que la página siempre ocupe al menos la altura visible */
+        overflow-y: auto;
     }
 
-    /* 3. Panel Izquierdo (Imagen): */
-    .panel-izquierda {
-        /* Ocupará el 100% del ancho (gracias a Bootstrap) */
-        height: auto; /* Permite que la altura de la imagen se ajuste a sus dimensiones 16:9 */
-        /* Si la imagen es muy grande (ej. 400px de alto) se desplazará junto con la página. */
-    }
-    
-    .imagen-login {
-        /* La imagen simplemente se ajusta al 100% del ancho disponible */
-        height: auto; 
-        object-fit: contain; /* Podrías usar 'contain' para ver la imagen completa sin recortes, o 'cover' si quieres que siempre ocupe el 100% del ancho de la pantalla, pero esto puede verse muy grande */
-        
-        /* En este contexto, 'width: 100%; height: auto;' es mejor para que la imagen se vea sin recorte */
-        width: 100%;
+    /* 2. Resetear la altura fija 100vh para permitir el scroll de contenido */
+    .contenedor-principal{
+        height: auto;
+        min-height: 100vh;
+        /* Asegura que la página siempre ocupe al menos la altura visible */
     }
 
     /* 4. Panel Derecho (Formulario): Se desplaza después de la imagen */
     .panel-derecha {
-        height: auto; 
-        min-height: auto; /* Ya no necesitamos el 100vh forzado */
-        padding: 50px 20px; 
+        height: auto;
+        min-height: auto;
+        /* Ya no necesitamos el 100vh forzado */
+        padding: 50px 20px;
     }
 }

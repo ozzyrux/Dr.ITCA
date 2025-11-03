@@ -1,7 +1,10 @@
 class NavBar extends HTMLElement {
   constructor() {
     super();
-    
+    const usuarioLogueado = sessionStorage.getItem("usuarioLogueado");
+    const nombreUsuario = usuarioLogueado
+      ? JSON.parse(usuarioLogueado).email
+      : "Invitado";
     //Contenido
     this.innerHTML = `
             <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
@@ -48,7 +51,7 @@ class NavBar extends HTMLElement {
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
                             <i class="bi bi-person-circle me-1"></i>
-                            <span id="userName">Rodrigo Armijo</span>
+                            <span id="userName">${nombreUsuario}</span>
                         </a>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="perfil.html"><i class="bi bi-person me-2"></i>Mi Perfil</a></li>

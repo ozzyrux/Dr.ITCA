@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,8 +10,9 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
 </head>
+
 <body>
-    
+
     <app-navbar></app-navbar>
 
 
@@ -41,58 +43,7 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr>
-                                        <td>
-                                            <strong>1 Noviembre, 2025</strong><br>
-                                            <small class="text-muted">10:00 AM</small>
-                                        </td>
-                                        <td>Consulta General</td>
-                                        <td>Revisión de rutina y chequeo general</td>
-                                        <td>
-                                            <span class="badge bg-warning">Programada</span>
-                                        </td>
-                                        <td>
-                                            <button class="btn btn-sm btn-outline-primary me-1">
-                                                <i class="bi bi-pencil"></i>
-                                            </button>
-                                            <button class="btn btn-sm btn-outline-danger">
-                                                <i class="bi bi-trash"></i>
-                                            </button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            <strong>20 Octubre, 2025</strong><br>
-                                            <small class="text-muted">2:30 PM</small>
-                                        </td>
-                                        <td>Odontología</td>
-                                        <td>Limpieza dental y revisión general</td>
-                                        <td>
-                                            <span class="badge bg-success">Completada</span>
-                                        </td>
-                                        <td>
-                                            <button class="btn btn-sm btn-outline-secondary" disabled>
-                                                <i class="bi bi-eye"></i>
-                                            </button>
-                                        </td>
-                                    </tr>
-                                    
-                                    <tr>
-                                        <td>
-                                            <strong>10 Octubre, 2025</strong><br>
-                                            <small class="text-muted">9:00 AM</small>
-                                        </td>
-                                        <td>Psicología</td>
-                                        <td>Sesión de seguimiento y consejería</td>
-                                        <td>
-                                            <span class="badge bg-success">Completada</span>
-                                        </td>
-                                        <td>
-                                            <button class="btn btn-sm btn-outline-secondary" disabled>
-                                                <i class="bi bi-eye"></i>
-                                            </button>
-                                        </td>
-                                    </tr>
+                                    <!-- Las citas se renderizarán aquí dinámicamente -->
                                 </tbody>
                             </table>
                         </div>
@@ -100,22 +51,22 @@
                 </div>
             </div>
             <div class="col-lg-4">
-                <div class="card">
+                <div class="card shadow-sm">
                     <div class="card-header">
                         <h5 class="mb-0"><i class="bi bi-info-circle me-2"></i>Resumen</h5>
                     </div>
                     <div class="card-body">
                         <div class="mb-3">
-                            <strong>Total de citas:</strong> 3
+                            <strong>Total de citas:</strong> <span id="totalCitas"></span>
                         </div>
                         <div class="mb-3">
-                            <strong>Citas próximas:</strong> 1
+                            <strong>Citas próximas:</strong> <span id="proximasCitas"></span>
                         </div>
                         <div class="mb-3">
-                            <strong>Completadas:</strong> 2
+                            <strong>Completadas:</strong> <span id="completadasCitas"></span>
                         </div>
                         <div class="mb-3">
-                            <strong>Canceladas:</strong> 0
+                            <strong>Canceladas:</strong> <span id="canceladasCitas"></span>
                         </div>
                     </div>
                 </div>
@@ -166,7 +117,7 @@
                                 </div>
                             </div>
                         </div>
-                        
+
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="mb-6">
@@ -189,12 +140,13 @@
                                     </select>
                                 </div>
                             </div>
-                            
+
                         </div>
 
                         <div class="mb-3">
                             <label for="motivo" class="form-label">Motivo de la consulta</label>
-                            <textarea class="form-control" id="motivo" rows="3" placeholder="Describa brevemente el motivo de su consulta" required></textarea>
+                            <textarea class="form-control" id="motivo" rows="3"
+                                placeholder="Describa brevemente el motivo de su consulta" required></textarea>
                         </div>
 
                         <div class="mb-3 form-check">
@@ -223,7 +175,8 @@
         <div class="container">
             <div class="row">
                 <div class="col-12">
-                    <h5 class="text-center mb-3"><i class="bi bi-exclamation-triangle me-2"></i>Información Importante</h5>
+                    <h5 class="text-center mb-3"><i class="bi bi-exclamation-triangle me-2"></i>Información Importante
+                    </h5>
                     <div class="row text-center">
                         <div class="col-md-4">
                             <div class="d-flex align-items-center justify-content-center">
@@ -265,10 +218,12 @@
     <!-- Scripts externos primero -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
-    
+
     <!-- Scripts de la aplicación -->
+    <script type="module" src="../src/app/Citas.js"></script>
     <script type="module" src="../src/componentes/navbar.js"></script>
     <script type="module" src="../src/app/CerrarSesion.js"></script>
     <script type="module" src="../src/main.js"></script>
 </body>
+
 </html>

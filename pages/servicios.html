@@ -25,68 +25,14 @@
         </div>
 
         <!-- Servicios Principales -->
-        <div class="row g-4 mb-5">
-            <div class="col-md-6">
-                <div class="card service-card blue h-100">
-                    <div class="card-body text-center">
-                        <div class="service-icon bg-primary text-white rounded-circle mx-auto mb-3">
-                            <i class="bi bi-heart display-6"></i>
-                        </div>
-                        <h4 class="card-title">Consulta General</h4>
-                        <p class="card-text">Atención médica general: <br> Evaluación de síntomas, diagnóstico y
-                            tratamiento de enfermedades comunes.</p>
-                        <div class="service-info">
-                            <p class="text-muted"><i class="bi bi-clock me-2"></i>Duración: 30 minutos</p>
-                            <p class="text-muted"><i class="bi bi-geo-alt me-2"></i>Consultorio 1</p>
-                        </div>
-                        <a href="citas.html" class="btn btn-primary mt-3">Agendar Cita</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-6">
-                <div class="card service-card green h-100">
-                    <div class="card-body text-center">
-                        <div class="service-icon bg-success text-white rounded-circle mx-auto mb-3">
-                            <i class="bi bi-plus-circle display-6"></i>
-                        </div>
-                        <h4 class="card-title">Odontología</h4>
-                        <p class="card-text">Servicios dentales: <br> Limpiezas, tratamientos preventivos y atención de
-                            emergencias dentales.</p>
-                        <div class="service-info">
-                            <p class="text-muted"><i class="bi bi-clock me-2"></i>Duración: 45 minutos</p>
-                            <p class="text-muted"><i class="bi bi-geo-alt me-2"></i>Consultorio Dental</p>
-                        </div>
-                        <a href="citas.html" class="btn btn-success mt-3">Agendar Cita</a>
-                    </div>
-                </div>
-            </div>
-
-
+        <div class="row g-4" id="listaServicios">
+            <!-- Aquí se insertan los servicios dinámicamente -->
         </div>
 
         <!-- Más Servicios -->
-        <div class="row g-4">
+        <div class="row g-4 mt-5">
 
-
-            <div class="col-md-6">
-                <div class="card service-card lightblue h-100">
-                    <div class="card-body text-center">
-                        <div class="service-icon bg-info text-white rounded-circle mx-auto mb-3">
-                            <i class="bi bi-droplet display-6"></i>
-                        </div>
-                        <h4 class="card-title">Laboratorio Clínico</h4>
-                        <p class="card-text">Análisis clínicos: Exámenes de laboratorio.</p>
-                        <div class="service-info">
-                            <p class="text-muted"><i class="bi bi-clock me-2"></i>Duración: 60 minutos</p>
-                            <p class="text-muted"><i class="bi bi-geo-alt me-2"></i>Laboratorio</p>
-                        </div>
-                        <a href="citas.html" class="btn btn-info mt-3 text-white">Agendar Cita</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-6">
+            <div class="col-md-12">
                 <div class="card service-card red h-100">
                     <div class="card-body text-center">
                         <div class="service-icon bg-danger text-white rounded-circle mx-auto mb-3">
@@ -151,9 +97,10 @@
             </div>
         </div>
     </footer>
-<!--Script de la navbar (role-aware) -->
-<script type="module" src="../src/componentes/navbar.js"></script>
+    <!--Script de la navbar (role-aware) -->
+    <script type="module" src="../src/componentes/navbar.js"></script>
     <script type="module" src="../src/main.js"></script>
+    <script type="module" src="../src/app/Servicios.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
