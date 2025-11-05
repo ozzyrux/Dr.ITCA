@@ -111,6 +111,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Guardar nueva cita
     btnGuardar.addEventListener('click', () => {
+        //Mostrar mensaje si no hay usuario logueado
+        if(!usuarioActual){
+            Toastify({
+                text: "Por favor inicie sesión para agendar una cita",
+                duration: 3000,
+                gravity: "top",
+                position: "right",
+                backgroundColor: "#dc3545",
+            }).showToast();
+            return;
+        }
+
+        //validar formulario
         if (!form.checkValidity()) {
             form.reportValidity();
             return;

@@ -97,6 +97,30 @@ btnCancelar.addEventListener("click", () => {
     modal.show();
 });
 
+document.addEventListener("DOMContentLoaded", () => {
+    const usuarioLogueado = JSON.parse(sessionStorage.getItem("usuarioLogueado"));
+    if (!usuarioLogueado) {
+        alert("No hay sesión activa. Por favor, inicie sesión");
+        window.location.href = "../pages/login.html";
+        return;
+    }
+
+    const perfilGuardado = localStorage.getItem(`perfil_${usuarioLogueado.id}`);
+    if (!perfilGuardado) {
+        alert("No se encontro info del usuario");
+        return;
+    }
+
+    const perfil = JSON.parse(perfilGuardado);
+
+    document.getItemById("profileName").textContent = perfil.nombre || "Sin Nombre";
+    document.getItemById("profileEmail").textContent = usuarioLogueado.email || "Sin Email";
+    document.getItemById("profileCarnet").textContent = perfil.carnet || "Sin Carnet";
+    document.getItemById("profilePhone").textContent = perfil.telefono || "Sin Teléfono";
+
+    console.log("Perfil cargado:", perfil);
+});
+
 btnConfirmarCancelar.addEventListener("click", () => {
     Object.values(campos).forEach((campo) => (campo.value = ""));
     localStorage.removeItem(`perfil_${usuarioLogueado.id}`);
