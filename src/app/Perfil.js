@@ -101,7 +101,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const usuarioLogueado = JSON.parse(sessionStorage.getItem("usuarioLogueado"));
     if (!usuarioLogueado) {
         alert("No hay sesión activa. Por favor, inicie sesión");
-        window.location.href = "../pages/login.html";
+        window.location.href = "../src/index.html";
         return;
     }
 
